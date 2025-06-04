@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ListPaginationTask</string>
+    <string name="nothing_selected">Nothing Selected</string>
+    <string name="all_selected">All Selected</string>
+</resources>

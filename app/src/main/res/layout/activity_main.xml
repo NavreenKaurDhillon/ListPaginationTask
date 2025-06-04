@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/selectAllTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select All"
+        android:layout_marginEnd="15dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/selectAllCB"
+        app:layout_constraintBottom_toBottomOf="@id/selectAllCB"/>
+
+    <CheckBox
+        android:id="@+id/selectAllCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/selectAllTV"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemsRV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginHorizontal="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/itemsNameTV"
+        app:layout_constraintTop_toBottomOf="@id/selectAllCB"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/item_layout"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/itemsNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="12dp"
+        android:text="@string/nothing_selected"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintBottom_toTopOf="@id/totalPriceTV"/>
+
+    <TextView
+        android:id="@+id/totalPriceTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:textColor="@color/black"
+        android:text="0"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
